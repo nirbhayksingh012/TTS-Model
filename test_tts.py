@@ -30,6 +30,7 @@ def main():
     
     # Check dependencies
     try:
+        # pyrefly: ignore [missing-import]
         import torch
         from huggingface_hub import snapshot_download
         
