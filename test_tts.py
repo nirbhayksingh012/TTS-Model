@@ -48,6 +48,7 @@ def main():
             
         utils_infer.load_checkpoint = patched_load_checkpoint
         
+        # pyrefly: ignore [missing-import]
         from f5_tts.api import F5TTS
     except ImportError as e:
         print(f"[ERROR] Missing dependency: {e}")
