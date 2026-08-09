@@ -44,7 +44,6 @@ def main():
             return original_load_checkpoint(model, ckpt_path, device, dtype=torch.float32, use_ema=use_ema)
             
         utils_infer.load_checkpoint = patched_load_checkpoint
-        
         # pyrefly: ignore [missing-import]
         from f5_tts.api import F5TTS
     except ImportError as e:
