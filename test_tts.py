@@ -42,7 +42,6 @@ def main():
         def patched_load_checkpoint(model, ckpt_path, device, dtype=None, use_ema=True):
             print("[*] Patched load_checkpoint: forcing float32 precision for model weights...")
             return original_load_checkpoint(model, ckpt_path, device, dtype=torch.float32, use_ema=use_ema)
-            
         utils_infer.load_checkpoint = patched_load_checkpoint
         # pyrefly: ignore [missing-import]
         from f5_tts.api import F5TTS
