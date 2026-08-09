@@ -38,6 +38,7 @@ def main():
         # Monkeypatch f5-tts to load the checkpoint using float32 on CUDA.
         # F5-TTS's default float16 precision causes numerical instability (silence/NaNs) 
         # on custom fine-tuned checkpoints like Orato.
+        # pyrefly: ignore [missing-import]
         import f5_tts.infer.utils_infer as utils_infer
         original_load_checkpoint = utils_infer.load_checkpoint
         
