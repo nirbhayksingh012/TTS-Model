@@ -35,7 +35,6 @@ def main():
         # pyrefly: ignore [missing-import]
         from huggingface_hub import snapshot_download
         
-        # Monkeypatch f5-tts to load the checkpoint using float32 on CUDA.
         # pyrefly: ignore [missing-import]
         import f5_tts.infer.utils_infer as utils_infer
         original_load_checkpoint = utils_infer.load_checkpoint
